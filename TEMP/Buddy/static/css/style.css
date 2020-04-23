@@ -1,0 +1,99 @@
+
+.user-message {
+    color: rgba(0, 67, 255, 0.33);
+}
+
+.chat-message {
+    background-color: rgba(128, 0, 95, 0.35);
+}
+
+.send-btn {
+    position: absolute;
+    top: 12px;
+    font-size: 30px;
+    color: grey;
+    right: 20px;
+}
+
+.send-btn:hover {
+    color: rgba(0, 128, 0, 0.61);
+}
+
+#text-box {
+    position: relative;
+    bottom: 8px;
+    width: 95%;
+}
+
+#text-box textarea {
+    border: 2px solid;
+}
+
+#app {
+    margin-left: 0px;
+}
+
+#app .card {
+    margin-bottom: 5px;
+}
+
+#app p {
+    margin-bottom: 0px;
+}
+
+/* Chat containers */
+.cont {
+    border: 2px solid #dedede;
+    background-color: #6f42c1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* Darker chat container */
+.darker {
+    border-color: #f5dd5d;
+    background-color: #71dd8ad;
+}
+
+/* Clear floats */
+.container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Style images */
+.container img {
+    float: left;
+    max-width: 60px;
+    width: 100%;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+/* Style the right image */
+.container img.right {
+    float: right;
+    margin-left: 20px;
+    margin-right: 0;
+}
+
+/* Style time text */
+.time-right {
+    float: right;
+    color: #aaa;
+}
+
+/* Style time text */
+.time-left {
+    float: left;
+    color: #999;
+}
+
+.scroll-box {
+	margin: 20px;
+    width: 500px;
+    height: 500px;
+    overflow: auto;
+}
