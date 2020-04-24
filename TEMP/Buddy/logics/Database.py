@@ -11,7 +11,7 @@ def SQL(query):
         fetch_result = cursor.fetchall()
         result = ""
         for i in fetch_result:
-            result = result + "   ".join(map(str, i)) + "\n"
+            result = result + " ".join(map(str, i)) + "\n"
         connection.close()
         return result
     except Exception as e:

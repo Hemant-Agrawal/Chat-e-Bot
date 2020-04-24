@@ -1,13 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}Welcome to The site{% endblock %}
 {% block content %}
-<div class="background-image">
-    <h1>Welcome to the Chatty Bot</h1>
-    <div class="content">
-        <div class="bottom-content">
-        <button onclick="location.href = '/ChatBot'" class="button" ><span>Buddy </span>
-        </button>
-        </div>
-    </div>
-</div>
+<h1>Welcome to the Chat Bot</h1>
+<h3>To connect to bot </h3>
+<button onclick="location.href = '/ChatBot';" id="myButton" class="float-left submit-button" >Buddy</button>
 {% endblock %}

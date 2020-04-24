@@ -2,10 +2,10 @@
 {% block title %}ChatBot{% endblock %}
 {% block content %}
 <div id="app" class="container top-padding">
-    <div class="row" style="overflow: auto;min-height:450px;max-height:450px;padding: 3px;">
-        <div class="offset-md-1 col-md-11" style=" border: 2px solid transparent">
+    <div class="row">
+        <div class="col-md-12">
             <div class="col-md-6" v-for="message in messages"
-                 v-bind:class="{ 'user-message': message.user,  'chat-message': message.chat_bot, 'offset-md-6': message.chat_bot}" style="border-radius: 30px ">
+                 v-bind:class="{ 'user-message': message.user,  'chat-message': message.chat_bot, 'offset-md-6': message.chat_bot}">
                 <div class="card-body">
                     [[message.text]]
                 </div>
@@ -13,7 +13,7 @@
         </div>
     </div>
     <div id="text-box" class="row top-padding">
-        <div class="offset-md-1 col-md-12">
+        <div class="col-md-12">
             <textarea class="form-control" v-bind:placeholder="placeholder" v-model="input"
                       v-bind:class="{ 'border-danger': send_blank}" v-on:change="check_content"></textarea>
             <i class="fas fa-arrow-circle-right send-btn" v-on:click="add_message"></i>
