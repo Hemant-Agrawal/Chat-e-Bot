@@ -71,10 +71,6 @@ pairs = [
         ["BBye take care. See you soon :)", "It was nice talking to you. See you soon :)"]
     ],
     [
-        r"Open Youtube",
-        ["Opening"]
-    ],
-    [
         r"Number of (teacher|teachers) in bca department",
         ["SELECT COUNT(NAME) from teachers", ]
     ],
@@ -90,6 +86,10 @@ pairs = [
         r"Placement in year (.*) ?",
         ["Select count(student_name) from Buddy_student where placed_year = '%1'",
          "Select company,count(student_name) from Buddy_student where Year ='%1' GROUP by company"]
+    ],
+    [
+        r"Average Package (of|in) bca",
+        ["SELECT avg(package) from Buddy_student"]
     ],
     [
         r"Average Package of (.*)",

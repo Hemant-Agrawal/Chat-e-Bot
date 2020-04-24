@@ -41,6 +41,61 @@
     margin-bottom: 0px;
 }
 
+.background-image {
+    background: url("../images/into1.png") center;
+    height: 550px;
+    color: #3c04b5;
+    text-align: center;
+}
+
+.contenta {
+    background: rgba(82, 23, 209, 0.5);
+    margin: auto;
+    min-height: 450px;
+    width: 250px;
+}
+
+.bottom-content{
+    bottom: 20%;
+}
+.button {
+    position: absolute;
+    border-radius: 30px;
+    color: #6f42c1;
+    border: 2px solid #5f42c1;
+    text-align: center;
+    font-size: 28px;
+    padding: 12px 24px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    bottom: 20%;
+}
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+.button:hover{
+    background: rgba(125,85,215,0.5);
+}
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 06;
+    right: 0;
+}
 /* Chat containers */
 .cont {
     border: 2px solid #dedede;
