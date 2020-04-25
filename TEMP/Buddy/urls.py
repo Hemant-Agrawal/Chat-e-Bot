@@ -7,4 +7,5 @@ urlpatterns = [
     path('logout', views.logout, name="logout"),
     path('get-response/', views.get_response, name="response"),
     path('ChatBot', views.ChatBot, name="ChatBot"),
+    path('temp', views.temp, name="temp"),
 ]

@@ -81,3 +81,7 @@ def Homepage(request):
 
 def ChatBot(request):
     return render(request, "ChatBot.html")
+
+
+def temp(request):
+    return render(request, "temp.html")

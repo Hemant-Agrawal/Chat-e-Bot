@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
+    <script src="../static/js/dev-vue.js"></script>
+    <script src="../static/js/script.js"></script>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+</head>
+<body>
+<div id="app">
+    <div class="message" v-for="message in messages">
+        [[message.text]]
+    </div>
+            <textarea v-bind:placeholder="placeholder" v-model="input"
+                       v-on:change="check_content"></textarea>
+            <i class="fas fa-arrow-circle-right send-btn" v-on:click="add_message"></i>
+</div>
+</body>
+</html>

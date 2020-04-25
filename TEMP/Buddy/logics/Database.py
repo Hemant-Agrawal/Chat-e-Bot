@@ -11,9 +11,9 @@ def SQL(query):
         fetch_result = cursor.fetchall()
         result = ""
         for i in fetch_result:
-            result = result + " ".join(map(str, i)) + "\n"
+            result = result + "".join(map(str, i)) + " , "
         connection.close()
-        return result
+        return result[:len(result)-2]
     except Exception as e:
         print("Can't execute the Query"+str(e))
 
