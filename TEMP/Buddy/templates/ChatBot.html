@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}ChatBot{% endblock %}
-{% block css %} <link rel="stylesheet" href="../static/style.css">{% endblock %}
+{% block css %}<link rel="stylesheet" href="../static/style.css">{% endblock %}
 {% block content %}
 <section class="msger">
     <header class="msger-header">
@@ -74,7 +74,7 @@
     function botResponse(rawText) {
         // Bot Response$.ajax({
         $.ajax({
-            url: '/get',
+            url: '/get-response',
             data: {
                 'msg': rawText
             },
