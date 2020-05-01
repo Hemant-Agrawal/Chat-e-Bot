@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
-import json
 from django.views.decorators.csrf import csrf_exempt
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
+
 from .logics import logic, Queries
 
 chat = logic.Chat(Queries.pairs, logic.reflections)
@@ -85,3 +85,9 @@ def ChatBot(request):
 
 def temp(request):
     return render(request, "temp.html")
+
+
+def get(request):
+    message = request.GET['msg']
+    response = chat.converse(message)
+    return JsonResponse({'response': response})
