@@ -1,28 +1,17 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
-import json
-from django.views.decorators.csrf import csrf_exempt
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
+
 from .logics import logic, Queries
 
 chat = logic.Chat(Queries.pairs, logic.reflections)
 
 
-@csrf_exempt
 def get_response(request):
-    response = {'status': None}
-    if request.method == 'POST':
-        data = json.loads(request.body.decode('utf-8'))
-        message = data['message']
-        chat_response = chat.converse(user_input=message)
-        response['message'] = {'text': chat_response, 'user': False, 'chat_bot': True}
-        response['status'] = 'ok'
-    else:
-        response['error'] = 'no post data found'
-    return HttpResponse(
-        json.dumps(response),
-        content_type="application/json")
+    message = request.GET['msg']
+    response = chat.converse(message)
+    return JsonResponse({'response': response})
 
 
 def login(request):
@@ -81,3 +70,7 @@ def Homepage(request):
 
 def ChatBot(request):
     return render(request, "ChatBot.html")
+
+
+def temp(request):
+    return render(request, "temp.html")

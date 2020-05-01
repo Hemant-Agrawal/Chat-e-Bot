@@ -1,7 +1,14 @@
-{% extends 'base.html' %}
-{% block title %}ChatBot{% endblock %}
-{% block css %}<link rel="stylesheet" href="../static/style.css">{% endblock %}
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat-e-Bot</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../static/css/temp.css">
+</head>
+<body>
 <section class="msger">
     <header class="msger-header">
         <div class="msger-header-title">
@@ -74,7 +81,7 @@
     function botResponse(rawText) {
         // Bot Response$.ajax({
         $.ajax({
-            url: '/get-response',
+            url: '/get',
             data: {
                 'msg': rawText
             },
@@ -96,5 +103,5 @@
         return `${h.slice(-2)}:${m.slice(-2)}`;
     }
 </script>
-
-{% endblock %}
+</body>
+</html>
