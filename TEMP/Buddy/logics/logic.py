@@ -117,7 +117,7 @@ class Chat(object):
             result = self.respond(user_input)
             if result[:6].lower() == "select":
                 result = str(Database.SQL(result))
-            print("Bot :>",    result)
+            print("Bot :>", result)
             return result
 
 

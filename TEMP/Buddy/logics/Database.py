@@ -16,4 +16,4 @@ def SQL(query):
         return result[:len(result)-2]
     except Exception as e:
         print("Can't execute the Query"+str(e))
-
+        return "Sorry!, Try Another"

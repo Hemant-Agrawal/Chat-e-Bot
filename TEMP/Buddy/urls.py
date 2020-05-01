@@ -8,4 +8,6 @@ urlpatterns = [
     path('get-response/', views.get_response, name="response"),
     path('ChatBot', views.ChatBot, name="ChatBot"),
     path('temp', views.temp, name="temp"),
+    path('ChatRoom', views.ChatRoom, name="ChatRoom"),
+    path('get-response/live/', views.live_response, name="live-response"),
 ]

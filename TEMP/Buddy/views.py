@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from django.http import HttpResponse, JsonResponse
+from . import models
 
 from .logics import logic, Queries
 
@@ -11,6 +12,15 @@ chat = logic.Chat(Queries.pairs, logic.reflections)
 def get_response(request):
     message = request.GET['msg']
     response = chat.converse(message)
+    if "Sorry" in response or "Please" in response or len(response) < 3:
+        query = models.Queries(query=message, response=response, user=request.user)
+        query.save()
+    return JsonResponse({'response': response})
+
+
+def live_response(request):
+    message = request.GET['msg']
+    response = message
     return JsonResponse({'response': response})
 
 
@@ -22,12 +32,12 @@ def login(request):
         user = auth.authenticate(username=username, password=password)
         if user is not None:
             auth.login(request, user)
-            return redirect("/")
+            return redirect("/ChatBot")
         else:
             messages.info(request, "Invalid credentials")
             return redirect("/login")
     else:
-        return render(request, "registration/user.html", {"login": "checked", "signup": ""})
+        return render(request, "registration/user.html", {"login": "checked", "signup": "", "alert": "True"})
 
 
 def register(request):
@@ -69,8 +79,15 @@ def Homepage(request):
 
 
 def ChatBot(request):
-    return render(request, "ChatBot.html")
+    if request.user.is_authenticated:
+        return render(request, "ChatBot.html")
+    else:
+        return redirect("/login")
 
 
 def temp(request):
     return render(request, "temp.html")
+
+
+def ChatRoom(request):
+    return render(request, "ChatRoom.html")

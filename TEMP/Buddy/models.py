@@ -32,3 +32,6 @@ class Queries(models.Model):
     query = models.CharField(max_length=200)
     response = models.TextField()
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.query
