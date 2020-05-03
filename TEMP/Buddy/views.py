@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.http import HttpResponse, JsonResponse
 from . import models
 
-from .logics import logic, Queries
+from .logics import logic, Queries, temp
 
 chat = logic.Chat(Queries.pairs, logic.reflections)
 
