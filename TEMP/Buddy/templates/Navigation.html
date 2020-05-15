@@ -1,28 +1,30 @@
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-  <div class="container">
-    <div class="navbar-header">
-      <a href="/" class="navbar-brand">Buddy</a>
+<nav class="navbar navbar-dark navbar-expand-lg  bg-light" id="mainNav" style="color: #27496d;">
+    <div class="container"><a class="navbar-brand text-black-50 bg-white" data-bs-hover-animate="bounce" href="home">Chat-e-BOT</a>
+        <button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right"
+                type="button" data-toogle="collapse"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i
+                class="fa fa-bars"></i></button>
+        <div class="collapse navbar-collapse bg-dark" id="navbarResponsive">
+            <ul class="nav navbar-nav ml-auto text-uppercase">
+                <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="home#services">Services</a>
+                </li>
+                <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="home#portfolio">features</a>
+                </li>
+               <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="home#contact">Contact</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item dropdown" role="presentation">
+                    <a class="nav-link dropdown-toggle js-scroll-trigger" data-toggle="dropdown" href="/">Hello {{user.username}}</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="Profile">Profile</a>
+                        <a class="dropdown-item" href="logout">Logout</a>
+                    </div>
+                </li>
+                {% else %}
+                <li class="nav-item" role="presentation"><a href="login" class="nav-link js-scroll-trigger"> Login </a></li>
+                <li class="nav-item" role="presentation"><a href="register" class="nav-link js-scroll-trigger"> Register </a></li>
+                {% endif %}
+            </ul>
+        </div>
     </div>
-    <!-- Toggler/collapsibe Button -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-    <div class="collapse navbar-collapse justify-content-between" id="collapsibleNavbar">
-      <ul class="navbar-nav ml-auto">
-        {% if user.is_authenticated %}
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="/" >Hello {{user.username}}</a>
-          <div class="dropdown-menu">
-            <!--a class="dropdown-item" href="Profile">Profile</a>
-            <a class="dropdown-item" href="change_password">Change Password</a-->
-            <a class="dropdown-item" href="logout">Logout</a>
-          </div>
-        </li>
-        {% else %}
-        <li class="nav-item"><a href="login" class="nav-link"> Login </a></li>
-        <li class="nav-item"><a href="register" class="nav-link"> Register </a></li>
-        {% endif %}
-      </ul>
-    </div>
-  </div>
 </nav>

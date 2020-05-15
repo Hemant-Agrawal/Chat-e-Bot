@@ -114,6 +114,10 @@ class Chat(object):
         if user_input:
             while user_input[-1] in "!.":
                 user_input = user_input[:-1]
+            if "what is the" in user_input:
+                    user_input = user_input[12:]
+            if "what is" in user_input:
+                user_input = user_input[8:]
             result = self.respond(user_input)
             if result[:6].lower() == "select":
                 result = str(Database.SQL(result))

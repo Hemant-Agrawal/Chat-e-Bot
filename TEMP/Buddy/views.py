@@ -20,7 +20,7 @@ def get_response(request):
 
 def live_response(request):
     message = request.GET['msg']
-    response = message
+    response = client.send_message(message)
     return JsonResponse({'response': response})
 
 
@@ -36,8 +36,9 @@ def login(request):
         else:
             messages.info(request, "Invalid credentials")
             return redirect("/login")
+
     else:
-        return render(request, "registration/user.html", {"login": "checked", "signup": "", "alert": "True"})
+        return render(request, "registration/user.html", {"login": "checked", "signup": "", "error": ""})
 
 
 def register(request):
