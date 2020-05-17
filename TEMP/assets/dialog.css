@@ -1,0 +1,21 @@
+#box{
+    width: 500px;
+    overflow: hidden;
+    box-shadow: 0 0 20px black;
+    border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 999;
+    padding:10px;
+    text-align: center;
+    display: none;
+}
+.close{
+    font-size: 20px;
+    cursor: pointer;
+    background: #007bff;
+    display: inline-block;
+    border-radius: 6px;
+}

@@ -24,9 +24,21 @@
     <link rel="stylesheet" href="../static/fonts/fontawesome5-overrides.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="../static/css/untitled.css">
+    <link rel="stylesheet" href="../static/dialog.css">
     {% block css %} {% endblock %}
 
     <script>
+        var c=0;
+    function show() {
+        if (c==0){
+            document.getElementById("#box").style.display = "block";
+            c=1;
+        }
+        else{
+            document.getElementById("#box").style.display ="none";
+            c=0
+        }
+    }
         {% if user.is_authenticated %}
         function chat() {
             location.href = '/ChatBot';
@@ -41,7 +53,13 @@
         {% endif %}
     </script>
 </head>
-<body>
+<body onload="show()">
+<div id="box">
+{% for message in messages %}
+<h1>{{message}}</h1>
+{% endfor %}
+    <a onclick="show()" class="close">Close</a>
+</div>
 {% include "Navigation.html" %}
 {% block content %}
 {% endblock %}

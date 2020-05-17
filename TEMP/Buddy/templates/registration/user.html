@@ -1,15 +1,9 @@
 {% extends 'base.html' %}
 {% block title %}Login{% endblock %}
 {% block css %}
-<link rel="stylesheet" href="../../static/login-style.css">{% endblock %}
+<link rel="stylesheet" href="../../static/login-style.css">
+<link rel="stylesheet" href="../../static/dialog.css">{% endblock %}
 {% block content %}
-{% if error %}<script>
-    $("document").ready( function () {
-        alert("{{error}}");
-
-    });
-</script>
-{% endif %}
 <div class="login-wrap">
     <div class="login-html">
         <input id="tab-1" type="radio" name="tab" class="sign-in" {{login}}><label for="tab-1" class="tab">Sign

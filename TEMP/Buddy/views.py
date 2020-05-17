@@ -57,7 +57,6 @@ def register(request):
                 return redirect("/register")
             elif User.objects.filter(email=email).exists():
                 messages.info(request, "Email Already taken")
-                print("Username Already taken")
                 return redirect("/register")
             else:
                 user = User.objects.create_user(username=username, email=email, password=password,
@@ -65,6 +64,7 @@ def register(request):
                 user.save()
                 return redirect("/login")
         else:
+            messages.info(request, "Confirm Password not match")
             return redirect("/register")
     else:
         return render(request, "registration/user.html", {"signup": "checked", "login": ""})
