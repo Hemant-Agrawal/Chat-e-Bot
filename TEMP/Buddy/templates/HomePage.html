@@ -1,7 +1,131 @@
 {% extends 'base.html' %}
 {% block title %}Welcome to The site{% endblock %}
+{% block css %}
+{% endblock %}
 {% block content %}
-<h1>Welcome to the Chat Bot</h1>
-<h3>To connect to bot </h3>
-<button onclick="location.href = '/ChatBot';" id="myButton" class="float-left submit-button" >Buddy</button>
+<body class="text-center" id="page-top">
+    <header class="masthead" style="background-image: url('../static/images/automation.png');">
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in"></div>
+                <div class="intro-heading text-uppercase"></div>
+            </div>
+        </div>
+    </header>
+    <section class="bg-dark" id="services"><button class="btn btn-primary text-truncate text-light bg-dark border rounded-circle border-info float-none btn-xl text-uppercase js-scroll-trigger" data-bs-hover-animate="pulse" type="button" style="background-color: #035aa4;<div style=&quot;width: 100%;height: 95%;border: 1px solid&quot;>&nbsp; <button type=&quot;button&quot;>hello</button></div>;color: rgb(0,0,0);padding: 3px;margin: 41px;font-size: 24px;" onclick="chat()">asK
+        ME</button>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-uppercase section-heading" style="color: rgb(246,248,249);height: 16px;">Services</h2>
+                    <h3 class="text-muted section-subheading"></h3>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="far fa-comment fa-stack-1x fa-inverse"></i></span>
+                    <h4 class="section-heading" style="color: rgb(233,236,239);">Chat</h4>
+                    <p class="text-muted"></p>
+                </div>
+                <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-laptop fa-stack-1x fa-inverse"></i></span>
+                    <h4 class="section-heading" style="color: rgb(237,238,239);">Responsive Design</h4>
+                    <p class="text-muted"></p>
+                </div>
+                <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-lock fa-stack-1x fa-inverse"></i></span>
+                    <h4 class="section-heading" style="color: rgb(237,240,244);">Secure</h4>
+                    <p class="text-muted"></p>
+                </div>
+            </div>
+        </div><span></span></section>
+    <section class="bg-dark pulse animated bg-light" id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-uppercase text-white section-heading">Features</h2>
+                    <h3 class="section-subheading text-muted"></h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-4 portfolio-item">
+                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+                        <div class="portfolio-hover" style="background-image: url(&quot;../static/images/about/1.jpg&quot;);">
+                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
+                        </div>
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4><strong>&nbsp;Autonomous&nbsp;</strong></h4>
+                        <p class="text-muted"></p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 portfolio-item">
+                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
+                        </div>
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4><strong>Pre-Trained</strong></h4>
+                        <p class="text-muted"></p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 portfolio-item">
+                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
+                        </div>
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4><strong>Better Answers</strong></h4>
+                        <p class="text-muted"></p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 portfolio-item">
+                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4 portfolio-item">
+                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" style="background-image:url('../static/images/map-image.png');">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-uppercase section-heading">CONTACT</h2>
+                    <h3 class="section-subheading text-muted"></h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <form id="contactForm" name="contactForm" novalidate="novalidate">
+                        <div class="form-row">
+                            <div class="col col-md-6">
+                                <div class="form-group"><input class="form-control" type="text" id="name" placeholder="Your Name *" required=""><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                <div class="form-group"><input class="form-control" type="email" id="email" placeholder="Your Email *" required=""><small class="form-text text-danger help-block lead"></small></div>
+                                <div class="form-group"><input class="form-control" type="tel" placeholder="Your Phone *" required=""><small class="form-text text-danger help-block lead"></small></div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group"><textarea class="form-control" id="message" placeholder="Your Message *" required=""></textarea><small class="form-text text-danger help-block lead"></small></div>
+                            </div>
+                            <div class="col">
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div><button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="submit">Send Message</button></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
 {% endblock %}

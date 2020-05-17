@@ -2,19 +2,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>{% block title %}Web Login using Django{% endblock %}</title>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Web Login using Django{% endblock %}</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
           integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-  {% block css %} {% endblock %}
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700">
+    <link rel="stylesheet" href="../static/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../static/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="../static/css/untitled.css">
+    <link rel="stylesheet" href="../static/dialog.css">
+    {% block css %} {% endblock %}
+
+    <script>
+        var c=0;
+    function show() {
+        if (c==0){
+            document.getElementById("#box").style.display = "block";
+            c=1;
+        }
+        else{
+            document.getElementById("#box").style.display ="none";
+            c=0
+        }
+    }
+        {% if user.is_authenticated %}
+        function chat() {
+            location.href = '/ChatBot';
+        }
+        {% else %}
+        function chat() {
+            alert("You need to Login," +
+                "to access Chat-e-bot");
+            location.href = '/login';
+        }
+
+        {% endif %}
+    </script>
 </head>
-<body>
-    {% include "Navigation.html" %}
-    {% block content %}
-    {% endblock %}
+<body onload="show()">
+<div id="box">
+{% for message in messages %}
+<h1>{{message}}</h1>
+{% endfor %}
+    <a onclick="show()" class="close">Close</a>
+</div>
+{% include "Navigation.html" %}
+{% block content %}
+{% endblock %}
 </body>
 </html>

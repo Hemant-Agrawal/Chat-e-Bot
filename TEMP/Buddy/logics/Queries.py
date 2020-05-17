@@ -5,7 +5,7 @@ pairs = [
     ],
     [
         r"what is your name ?",
-        ["My name is Chatty and I'm a chatbot ?", ]
+        ["My name is Chattybot and I'm a chatbot ", ]
     ],
     [
         r"how are you ?",
@@ -29,26 +29,8 @@ pairs = [
 
     ],
     [
-        r"what (.*) want ?",
-        ["Make me an offer I can't refuse", ]
-
-    ],
-    [
         r"(.*) created ?",
-        ["Nagesh created me using Python's NLTK library ", "top secret ;)", ]
-    ],
-    [
-        r"(.*) (location|city) ?",
-        ['Chennai, Tamil Nadu', ]
-    ],
-    [
-        r"how is weather in (.*)?",
-        ["Weather in %1 is awesome like always", "Too hot man here in %1", "Too cold man here in %1",
-         "Never even heard about %1"]
-    ],
-    [
-        r"i work in (.*)?",
-        ["%1 is an Amazing company, I have heard about it. But they are in huge loss these days.", ]
+        ["GLA Buddies created me using Python's NLTK library ", "top secret ;)", ]
     ],
     [
         r"(.*)raining in (.*)",
@@ -57,14 +39,6 @@ pairs = [
     [
         r"how (.*) health(.*)",
         ["I'm a computer program, so I'm always healthy ", ]
-    ],
-    [
-        r"(.*) (sports|game) ?",
-        ["I'm a very big fan of Football", ]
-    ],
-    [
-        r"who (.*) sportsperson ?",
-        ["Messy", "Ronaldo", "Roony"]
     ],
     [
         r"(quit|exit|bye|get lost)",
