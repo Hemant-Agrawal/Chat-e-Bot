@@ -1,19 +1,40 @@
-{% extends 'base.html' %}
-{% block title %}Welcome to The site{% endblock %}
-{% block css %}
-{% endblock %}
-{% block content %}
-<body class="text-center" id="page-top">
-    <header class="masthead" style="background-image: url('../static/images/automation.png');">
-        <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in"></div>
-                <div class="intro-heading text-uppercase"></div>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Chat-e-Bot</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+</head>
+
+<body id="page-top">
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-light" id="mainNav" style="color: #27496d;">
+      <div class="container"><a class="navbar-brand text-black-50 bg-white" data-bs-hover-animate="bounce" href="#page-top">Chat-e-BOT</a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" data-toogle="collapse"
+              aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+          <div class="collapse navbar-collapse bg-dark" id="navbarResponsive">
+                <ul class="nav navbar-nav ml-auto text-uppercase">
+                  <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#services">Services</a></li>
+                  <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#portfolio">features</a></li>
+
+                  <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+                </ul>
             </div>
         </div>
+    </nav>
+    <header class="masthead" style="background-image: url('assets/img/automation.png');">
+        <div class="container">
+            <div class="intro-text"><span class="text-justify" style="/*color: #084177;*/font-size: 45px;/*font-family: Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;*/color: #000000;">Welcome To Our Chat Bot</span>
+                <div class="intro-lead-in"></div>
+                <div class="intro-heading text-uppercase"></div><sub style="color: #000000;font-size: 47px;">Nice To Meet You</sub></div><a class="btn btn-dark border rounded-0 btn-xl text-uppercase js-scroll-trigger">Go</a>
+        </div>
     </header>
-    <section class="bg-dark" id="services"><button class="btn btn-primary text-truncate text-light bg-dark border rounded-circle border-info float-none btn-xl text-uppercase js-scroll-trigger" data-bs-hover-animate="pulse" type="button" style="background-color: #035aa4;<div style=&quot;width: 100%;height: 95%;border: 1px solid&quot;>&nbsp; <button type=&quot;button&quot;>hello</button></div>;color: rgb(0,0,0);padding: 3px;margin: 41px;font-size: 24px;" onclick="chat()">asK
-        ME</button>
+    <section class="bg-dark" id="services">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -47,7 +68,7 @@
             <div class="row">
                 <div class="col-sm-6 col-md-4 portfolio-item">
                     <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-                        <div class="portfolio-hover" style="background-image: url(&quot;../static/images/about/1.jpg&quot;);">
+                        <div class="portfolio-hover" style="background-image: url(&quot;assets/img/about/1.jpg&quot;);">
                             <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
                         </div>
                     </a>
@@ -95,7 +116,7 @@
             </div>
         </div>
     </section>
-    <section id="contact" style="background-image:url('../static/images/map-image.png');">
+    <section id="contact" style="background-image:url('assets/img/map-image.png');">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -126,6 +147,135 @@
             </div>
         </div>
     </section>
+    <div class="modal fade portfolio-modal text-center" role="dialog" tabindex="-1" id="portfolioModal1">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <div class="modal-body">
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted"></p>
+                                    <ul class="list-unstyled">
+
+                                    </ul><button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fa fa-times"></i><span>&nbsp;Close Project</span></button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade portfolio-modal text-center" role="dialog" tabindex="-1" id="portfolioModal2">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <div class="modal-body">
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted"></p>
+                                    <ul class="list-unstyled">
+
+                                    </ul><button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fa fa-times"></i><span>&nbsp;Close Project</span></button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade portfolio-modal text-center" role="dialog" tabindex="-1" id="portfolioModal3">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <div class="modal-body">
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted"></p>
+                                    <ul class="list-unstyled">
+
+                                    </ul><button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fa fa-times"></i><span>&nbsp;Close Project</span></button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade portfolio-modal text-center" role="dialog" tabindex="-1" id="portfolioModal4">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <div class="modal-body">
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted"></p>
+                                    <ul class="list-unstyled">
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul><button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fa fa-times"></i><span>&nbsp;Close Project</span></button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade portfolio-modal text-center" role="dialog" tabindex="-1" id="portfolioModal5">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <div class="modal-body">
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted"></p>
+                                    <ul class="list-unstyled">
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul><button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fa fa-times"></i><span>&nbsp;Close Project</span></button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade portfolio-modal text-center" role="dialog" tabindex="-1" id="portfolioModal6">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <div class="modal-body">
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted"></p>
+                                    <ul class="list-unstyled">
+
+                                    </ul><button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fa fa-times"></i><span>&nbsp;Close Project</span></button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="assets/js/agency.js"></script>
 </body>
 
-{% endblock %}
+</html>
